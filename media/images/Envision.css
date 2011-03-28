@@ -53,11 +53,12 @@ h3 {
 }
 
 /* images */
-img {
-	background: #FAFAFA;
-   border: 1px solid #E5E5E5;
-	padding: 5px;
+
+img.logo {
+    padding-left: 30px ;
+    width:80px;
 }
+
 img.float-right {
   margin: 5px 0px 10px 10px;  
 }
@@ -217,8 +218,9 @@ input.button {
 	color: #FFF;	
 }
 #header h1#logo-text a {
+	padding-left: 70px;
 	position: absolute;
-	margin: 0; padding: 0;
+	margin: 0; 
 	font: bolder 44px 'Trebuchet MS', Arial, Sans-serif;
 	letter-spacing: -2px;
 	color: #FFF;
@@ -230,8 +232,9 @@ input.button {
 	top: 25px; left: 47px;	
 }
 #header p#slogan {
+	padding-left: 70px;
 	position: absolute;
-	margin: 0; padding: 0;
+	margin: 0; 
 	font: normal 12px 'Trebuchet MS', Arial, Sans-serif;
 	text-transform: none;
 	color: #FFF;

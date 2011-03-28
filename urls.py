@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     ('^_ah/warmup$', 'djangoappengine.views.warmup'),
     (r'^admin/', include(admin.site.urls)),    
     
-    (r'^kotakuang/$',include('kotakuang.urls')),
+    (r'^kotakuang/',include('kotakuang.urls')),
 
     ('^$', 'django.views.generic.simple.direct_to_template',
     {'template': 'home.html'}),
