@@ -11,6 +11,5 @@ urlpatterns = patterns('',
     
     (r'^kotakuang/',include('kotakuang.urls')),
 
-    ('^$', 'django.views.generic.simple.direct_to_template',
-    {'template': 'home.html'}),
+    ('^$', 'kotakuang.views.about'),
 )
