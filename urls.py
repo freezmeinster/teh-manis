@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     
     (r'^kotakuang/',include('kotakuang.urls')),
 
-    ('^$', 'kotakuang.views.about'),
+    url('^$', 'main.views.home',name="main"),
 )
