@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title>Teh Manis</title>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="author" content="Bramandityo Prabowo - http://bramandityo.com" />
+<meta name="description" content="Site Description Here" />
+<meta name="keywords" content="keywords, here" />
+<meta name="robots" content="index, follow, noarchive" />
+<meta name="googlebot" content="noarchive" />
+
+<link rel="shortcut icon" href="/asset/main/favicon.png" />
+<link rel="stylesheet" type="text/css" media="screen" href="/asset/main/css/screen.css" />
+
+</head>
+
+<body>
+
+<!--header -->
+<div id="header-wrap"><div id="header">
+
+	<a name="top"></a>
+
+	<h1 id="logo-text"><a href="index.html" title="">Teh Manis</a></h1>
+	<p id="slogan">Yang manis-manis tentang hidup ada di sini </p>
+
+	<div  id="nav">
+		<ul>
+			<li id="current"><a href="{% url main %}">Beranda</a></li>
+			<li><a href="{% url kotakuang_home %}">Kotak Uang</a></li>
+			<li><a href="{% url main %}">Tentang Kami</a></li>
+		</ul>
+	</div>
+
+   <p id="rss">
+      <a href="index.html">Grab the RSS feed</a>
+   </p>
+
+   <form id="quick-search" method="get" action="index.html">
+      <fieldset class="search">
+         <label for="qsearch">Cari</label>
+         <input class="tbox" id="qsearch" type="text" name="qsearch"  />
+         <button class="btn" title="Submit Search">Search</button>
+      </fieldset>
+   </form>
+
+<!--/header-->
+</div></div>
+	
+<!-- content-outer -->
+<div id="content-wrap" class="clear" >
+
+	<!-- content -->
+   <div id="content">
+
+   	<!-- main -->
+	   <div id="main">
+        {% block content %}
+        {% endblock %}
+
+
+        <!-- /main -->
+		</div>
+
+      <!-- sidebar -->
+		<div id="sidebar">
+
+      	<div class="about-me">
+
+         	<h3>Tentang Kami</h3>
+		      <p>
+		      <a href="index.html"><img src="/asset/lib/teh_manis_logo.png" width="140" height="140" /></a><br>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
+			   Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
+			   posuere nunc justo tempus leo <a href="index.html">Learn more...</a>
+				</p>
+
+         </div>
+
+			<div class="sidemenu">
+
+				<h3>Sidebar Menu</h3>
+				<ul>
+				    <li id="current"><a href="{% url main %}">Beranda</a></li>
+				    <li><a href="{% url kotakuang_home %}">Kotak Uang</a></li>
+				    <li><a href="{% url main %}">Tentang Kami</a></li>
+				</ul>
+
+			</div>
+
+			
+      <!-- /sidebar -->
+		</div>
+
+    <!-- content -->
+	</div>
+
+<!-- /content-out -->
+</div>
+		
+<!-- footer-outer -->
+<div id="footer-outer" class="clear"><div id="footer-wrap">
+	 <div class="col-a">
+		<h3>Contact Info</h3>
+		<p>
+		<strong>Phone: </strong>+6285279916229<br/>
+		</p>
+		<p><strong>Address: </strong>123 Put Your Address Here</p>
+        <p><strong>E-mail: </strong>me@coolblue.com</p>
+	</div>
+
+
+</div></div>
+
+<!-- footer-bottom -->
+<div id="footer-bottom">
+
+	<p class="bottom-left">
+		&copy; 2011 <strong>Copyright Teh Manis Web Developer Team</strong>&nbsp; &nbsp; &nbsp;
+		<a href="http://www.bluewebtemplates.com/" title="Website Templates">website templates</a> by <a href="http://www.styleshout.com/">styleshout</a>
+	</p>
+
+	<p class="bottom-right">
+		<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> |
+	   <a href="http://validator.w3.org/check/referer">XHTML</a>	|
+		<a href="index.html">Home</a> |
+		<a href="index.html">Sitemap</a> |
+		<a href="index.html">RSS Feed</a> |
+      <strong><a href="#top">Back to Top</a></strong>
+   </p>
+
+<!-- /footer-bottom-->
+</div>
+
+</body>
+</html>
