@@ -79,19 +79,23 @@
 			   posuere nunc justo tempus leo <a href="index.html">Learn more...</a>
 				</p>
 
-         </div>
-
-			<div class="sidemenu">
-
-				<h3>Sidebar Menu</h3>
-				<ul>
-				    <li id="current"><a href="{% url main %}">Beranda</a></li>
-				    <li><a href="{% url kotakuang_home %}">Kotak Uang</a></li>
-				    <li><a href="{% url main %}">Tentang Kami</a></li>
-				</ul>
-
-			</div>
-
+        </div>
+	<div class="sidemenu">
+	    <h3>Sidebar Menu</h3>
+		<ul>
+		    <li id="current"><a href="{% url main %}">Beranda</a></li>
+		    <li><a href="{% url kotakuang_home %}">Kotak Uang</a></li>
+		    <li><a href="{% url main %}">Tentang Kami</a></li>
+		</ul>
+	</div>
+	<div class="about-me">
+	    <h3>Quote of the day</h3>
+	    <ul>
+	    {% for data in twitter %}
+		<li>{{data.text}}</li> 
+	    {% endfor %}
+	    </ul>
+	</div>
 			
       <!-- /sidebar -->
 		</div>

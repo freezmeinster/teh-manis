@@ -31,6 +31,11 @@ indexes:
   - name: __key__
     direction: desc
 
+- kind: main_quote
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: main_tamu
   properties:
   - name: __key__

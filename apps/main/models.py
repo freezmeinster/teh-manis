@@ -25,4 +25,15 @@ class Tamu(models.Model):
     tgl_daftar = models.DateTimeField(auto_now_add=True)
     
     def __unicode__(self):
-        return self.nama
+        return "Pengunjung %s " % self.nama
+       
+class Quote(models.Model):
+    author = models.CharField(max_length=255)
+    isi = models.TextField()
+    tgl_buat = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+	ordering = ['tgl_buat']
+    
+    def __unicode__(self):
+	return self.isi

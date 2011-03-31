@@ -44,6 +44,7 @@ ROOT_URLCONF = 'urls'
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'libs'))
 
 # Activate django-dbindexer if available
 try:

@@ -1,6 +1,7 @@
 from django.contrib import admin
-from main.models import Post,Kategori,Tamu
+from main import models
 
-admin.site.register(Post)
-admin.site.register(Kategori)
-admin.site.register(Tamu)
+admin.site.register(models.Post)
+admin.site.register(models.Kategori)
+admin.site.register(models.Tamu)
+admin.site.register(models.Quote)
