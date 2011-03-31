@@ -31,8 +31,8 @@
 			<p>
 			        <a href="{% url main %}">Situs Utama</a> |
 				<a href="{% url kotakuang_home %}">Akun</a> | 
-				<a href="{% url kotakuang_home %}">Daftar</a> | 
-				<a href="{% url kotakuang_home %}">Login</a>			
+				<a href="{% url kotakuang_daftar %}">Daftar</a> | 
+				<a href="{% url kotakuang_login %}">Login</a>			
 			</p>		
 		</div>		
 						
@@ -42,8 +42,10 @@
 		<div  id="menu">
 			<ul>
 				<li {% if url == 'home' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Beranda</a></li>
+				{% if user.is_authenticated %}
 				<li {% if url == 'input' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pemasukan</a></li>
 				<li {% if url == 'home' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pengeluaran</a></li>
+				{% endif %}
 				<li {% if url == 'about' %} id="current" {% endif %}><a href="{% url kotakuang_about %}">Tentang Kotak Uang</a></li>		
 			</ul>
 		</div>					

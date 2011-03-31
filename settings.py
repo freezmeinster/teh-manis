@@ -2,6 +2,7 @@
 # If you want to use a different backend you have to remove all occurences
 # of "djangoappengine" from this file.
 from djangoappengine.settings_base import *
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 import os,sys
 
@@ -30,6 +31,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
+   # 'libs.context_processors.get_last_tweet.twitter_status'
 )
 
 # This test runner captures stdout and associates tracebacks with their

@@ -6,14 +6,15 @@ consumer_secret='4CJqP9JcFVcMZxnk3coscT5TUht0iHUrVH4I1Qpjk'
 access_token_key='79429095-feDqXDJg0u2wDGRfI0Zm0JmOID4WJlvylk4SBFkLC'
 access_token_secret='wBvXbSHrhaDzxRFwVMP4EMUU6AO5LRsxg4b3aIhIY'
 twitter_user = 'freez_meinster'
+max_last_status = 3
 
-def twitter_status():
+def twitter_status( request ):
     api = twitter.Api(
-	consumer_key=consumer_key,
-	consumer_secret=consumer_secret,
-	access_token_key=access_token_key,
-	access_token_secret=access_token_secret
-	)
-	
-    status = api.GetUserTimeline(twitter_user)
-    return status
+    consumer_key=consumer_key,
+    consumer_secret=consumer_secret,
+    access_token_key=access_token_key,
+    access_token_secret=access_token_secret
+    )
+    
+    status = api.GetUserTimeline(twitter_user)[:max_last_status]
+    return { 'tweet' : status }
