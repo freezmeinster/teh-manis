@@ -21,6 +21,21 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: kotakuang_kategori
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: kotakuang_pemasukan
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: kotakuang_pengeluaran
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: main_kategori
   properties:
   - name: __key__

@@ -6,6 +6,22 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 import os,sys
 
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'libs'))
+
+LANGUAGE_CODE = 'id'
+
+SITE_ID = 1
+
+USE_I18N = True
+
+USE_L10N = True
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/user/login/'
+LOGOUT_URL = '/user/logout/'
+
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
 INSTALLED_APPS = (
@@ -43,10 +59,7 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
 
 ROOT_URLCONF = 'urls'
 
-PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'libs'))
 
 # Activate django-dbindexer if available
 try:

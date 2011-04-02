@@ -1,20 +1,26 @@
 from django.shortcuts import render_to_response 
 from django.template import RequestContext
-
-def login(request):
-    return render_to_response('kotakuang/login.html',{
-	'url' : 'home',
-	},context_instance=RequestContext(request))
-	
-
-def register(request):
-    return render_to_response('kotakuang/register.html',{
-	'url' : 'home',
-	})
+from kotakuang.forms import KategoriForm
 
 def home(request):
     return render_to_response('kotakuang/index.html',{
 	'url' : 'home',
+	},context_instance=RequestContext(request))
+
+def kategori(request):
+    return render_to_response('kotakuang/kategori.html',{
+	'url' : 'home',
+	'form' : KategoriForm(),
+	},context_instance=RequestContext(request))
+
+def pemasukan(request):
+    return render_to_response('kotakuang/index.html',{
+	'url' : 'home',
+	},context_instance=RequestContext(request))
+	
+def pengeluaran(request):
+	return render_to_response('kotakuang/index.html',{
+	    'url' : 'home',
 	},context_instance=RequestContext(request))
     
 def about(request):

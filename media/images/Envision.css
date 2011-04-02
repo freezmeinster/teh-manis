@@ -43,7 +43,7 @@ h1 {
 	color: #006699;
 }
 h2 {
-	font-size: 140%;
+	font-size: 130%;
 	text-transform: uppercase;
 	color: #88ac0b;
 }
@@ -198,19 +198,19 @@ input.button {
    LAYOUT
 ********************************************/ 
 #wrap {
-	width: 820px;
+	width: 960px;
 	background: #CCC url(content.jpg) repeat-y center top;
 	margin: 0 auto;
 	text-align: left;
 }
 #content-wrap {
 	clear: both;
-	width: 760px;
+	width: 900px;
 	padding: 0; 
 	margin: 10px auto;
 }
 #header {
-	width: 820px;
+	width: 960px;
 	position: relative;
 	height: 103px;
 	background: #CCC url(header.jpg) no-repeat center top;
@@ -265,7 +265,7 @@ input.button {
 	background: url(menu.jpg) repeat-x 0 0;	
 	font: bold 12px/37px Verdana, Arial, Tahoma, Sans-serif;
 	height: 37px;
-	width: 780px;	
+	width: 913px;	
 }
 #menu ul {
 	float: right;
@@ -384,7 +384,7 @@ input.button {
 	color: #C6DDEE;
 	background: #CCC url(footer.jpg) no-repeat center top;
 	clear: both;
-	width: 820px;
+	width: 960px;
 	height: 65px;
 	text-align: center;	
 	font-size: 92%;	

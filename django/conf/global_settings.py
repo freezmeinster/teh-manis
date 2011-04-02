@@ -36,7 +36,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'id'
 
 # Languages we provide translations for, out of the box. The language name
 # should be the utf-8 encoded local name for the language.
@@ -121,7 +121,7 @@ LANGUAGE_COOKIE_NAME = 'django_language'
 
 # If you set this to True, Django will format dates, numbers and calendars
 # according to user current locale
-USE_L10N = False
+USE_L10N = True
 
 # Not-necessarily-technical managers of the site. They get broken link
 # notifications and other various e-mails.
@@ -177,7 +177,10 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 
 # List of strings representing installed apps.
-INSTALLED_APPS = ()
+INSTALLED_APPS = (
+'django.contrib.contenttypes',
+'django.contrib.auth',
+)
 
 # List of locations of the template source files, in search order.
 TEMPLATE_DIRS = ()

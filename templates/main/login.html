@@ -1,0 +1,25 @@
+{% extends 'main/base.html'%}
+{% block content %}
+        <div class="post">
+
+            <div class="right">
+                <h2> Login Pengguna </h2>
+                <p>
+		     {% if form.errors %}
+		    <p stle="color:red;">Username dan password yang ada masukan tidak cocok</p>
+		    {% endif %}
+		    <table>
+		    <form method="post" action="{% url django.contrib.auth.views.login %}">
+		    <input type="hidden" name="next" value="{{ next }}" />
+		    {% csrf_token %}
+			<tr><td>{{ form.username.label }}</td><td>{{ form.username }}</td></tr>
+			<tr><td>{{ form.password.label }}</td><td>{{ form.password }}</td></tr>
+			<tr><td colspan='3'><input type="submit" value="Login"></td></tr>
+		    </form>
+		    </table>
+		</p>
+            </div>
+
+
+            </div>
+{% endblock%}

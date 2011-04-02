@@ -1,0 +1,24 @@
+{% extends 'main/base.html'%}
+{% block content %}
+        <div class="post">
+
+            <div class="right">
+                <h2> Pendaftaran Pengguna </h2>
+                <p>
+		    <table>
+		    <form method="POST" action="">
+		    {% csrf_token %}
+			<tr><td>Nama </td><td>{{ form.fullname }}</td></tr>
+			<tr><td>Email</td><td>{{ form.email }}</td></tr>
+			<tr><td>{{ form.username.label  }}</td><td>{{ form.username }}</td></tr>
+			<tr><td>{{ form.password1.label  }}</td><td>{{ form.password1 }}</td></tr>
+			<tr><td>{{ form.password2.label  }}</td><td>{{ form.password2 }}</td></tr>
+			<tr><td colspan='3'><input type="submit" value="Daftar"/></td></tr>
+		    </form>
+		    </table>
+		</p>
+            </div>
+
+
+            </div>
+{% endblock%}

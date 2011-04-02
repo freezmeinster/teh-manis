@@ -29,10 +29,15 @@
 			
 			<div id="header-links">
 			<p>
-			        <a href="{% url main %}">Situs Utama</a> |
-				<a href="{% url kotakuang_home %}">Akun</a> | 
-				<a href="{% url kotakuang_daftar %}">Daftar</a> | 
-				<a href="{% url kotakuang_login %}">Login</a>			
+			        <a href="{% url main %}">Situs Utama</a>
+				
+				{% if user.is_authenticated %}
+				| <a href="{% url kotakuang_home %}">Akun</a> |
+				<a href="{% url user_logout %}">Logout</a>
+				{% else %}
+				| <a href="{% url register 1 %}">Daftar</a> | 
+				<a href="{% url user_login %}">Login</a>
+				{% endif %}
 			</p>		
 		</div>		
 						
@@ -43,8 +48,9 @@
 			<ul>
 				<li {% if url == 'home' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Beranda</a></li>
 				{% if user.is_authenticated %}
-				<li {% if url == 'input' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pemasukan</a></li>
-				<li {% if url == 'home' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pengeluaran</a></li>
+				<li {% if url == 'kategori' %} id="current" {% endif %}><a href="{% url kotakuang_kategori %}">Kategori</a></li>
+				<li {% if url == 'pemasukan' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pemasukan</a></li>
+				<li {% if url == 'pengeluaran' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pengeluaran</a></li>
 				{% endif %}
 				<li {% if url == 'about' %} id="current" {% endif %}><a href="{% url kotakuang_about %}">Tentang Kotak Uang</a></li>		
 			</ul>
@@ -54,16 +60,31 @@
 		<div id="content-wrap">
 				
 			<div id="sidebar">
-			
-					
-								
+			{% if user.is_authenticated %}
+			    <h3>Selamat datang kembali </h3>
+			    <ul class='sidemenu'>
+				<li>{{ user.get_full_name }}</li>
+				<li>
+				    <strong>Email</strong><br/>
+				    {{ user.email }}
+				</li>
+				<li>
+				    <strong>Terakhir Login</strong><br/>
+				    {{ user.last_login|date:"D, d M Y" }}
+				</li>
+				<li>
+				    <strong>Mendaftar Sejak</strong><br/>
+				    {{ user.date_joined|timesince }}
+				</li>
+			    </ul>			
+			{% endif %}
 			</div>
 				
 			<div id="main">
-			<h1>{% block title %}{% endblock %}</h1>
+			{% block title %}{% endblock %}
                         {% block content %}
                         {% endblock %}
-			</div>
+                    	</div>
 		
 		<!-- content-wrap ends here -->	
 		</div>
@@ -76,12 +97,7 @@
 			Design by: <a href="http://www.styleshout.com/">styleshout</a> | 
 			Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | 
 			<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
-			
-   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			<a href="index.html">Home</a>&nbsp;|&nbsp;
-   		<a href="index.html">Sitemap</a>&nbsp;|&nbsp;
-	   	<a href="index.html">RSS Feed</a>
+
    		</p>
 				
 		</div>	
