@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/asset/images/Envision.css" type="text/css" />
 <link rel="shortcut icon" href="/asset/lib/favicon.png" />
 <title>Teh manis - Kotak uang</title>
-	
+	{% load humanize %}
 </head>
 
 <body>
@@ -49,8 +49,8 @@
 				<li {% if url == 'home' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Beranda</a></li>
 				{% if user.is_authenticated %}
 				<li {% if url == 'kategori' %} id="current" {% endif %}><a href="{% url kotakuang_kategori %}">Kategori</a></li>
-				<li {% if url == 'pemasukan' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pemasukan</a></li>
-				<li {% if url == 'pengeluaran' %} id="current" {% endif %}><a href="{% url kotakuang_home %}">Pengeluaran</a></li>
+				<li {% if url == 'pemasukan' %} id="current" {% endif %}><a href="{% url kotakuang_pemasukan %}">Pemasukan</a></li>
+				<li {% if url == 'pengeluaran' %} id="current" {% endif %}><a href="{% url kotakuang_pengeluaran %}">Pengeluaran</a></li>
 				{% endif %}
 				<li {% if url == 'about' %} id="current" {% endif %}><a href="{% url kotakuang_about %}">Tentang Kotak Uang</a></li>		
 			</ul>
@@ -76,7 +76,12 @@
 				    <strong>Mendaftar Sejak</strong><br/>
 				    {{ user.date_joined|timesince }}
 				</li>
-			    </ul>			
+			    </ul>
+			    
+			    <h3>Total Pengeluaran </h3>
+			    <ul class='sidemenu'>
+				<li>Rp {{ total_pengeluaran|intcomma }},-</li>
+			    </ul>
 			{% endif %}
 			</div>
 				

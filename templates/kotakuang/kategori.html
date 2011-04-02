@@ -2,5 +2,23 @@
 {% block title %} <h2>Daftar Kategori </h2> {% endblock %}
 
 {% block content %}
+<p>
+<table>
+    <tr><th>Nama</th><th>Deskripsi</th><th>Aksi</th></tr>
+    {% for data in kategori %}
+    <tr class="row-b"><td>{{ data.nama }}</td><td>{{ data.deskripsi }}</td><td>Hapus || Edit </td></tr>
+    {% endfor %}
+</table>
+</p>
+
+<p>
+    <form method="POST" action="">
+	<table>
+	    <tr><td>{{ form.nama.label }}</td><td>:</td><td>{{ form.nama }}</td></tr>
+	    <tr><td>{{ form.deskripsi.label }}</td><td>:</td><td>{{ form.deskripsi }}</td></tr>
+	    <tr><td colspan="3"><input type="submit" value="Tambah"></td></tr>
+	</table>
+    </form>
+</p>
 
 {% endblock %}

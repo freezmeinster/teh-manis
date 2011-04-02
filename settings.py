@@ -25,6 +25,7 @@ LOGOUT_URL = '/user/logout/'
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
 INSTALLED_APPS = (
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.auth',
@@ -47,7 +48,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
-   # 'libs.context_processors.get_last_tweet.twitter_status'
+    'libs.context_processors.kotakuang.user',
+    'libs.context_processors.get_last_tweet.twitter_status'
 )
 
 # This test runner captures stdout and associates tracebacks with their
