@@ -1,10 +1,10 @@
 from libs import oauth2
 from libs.twitter import twitter
 
-consumer_key = 'Y3UimF6A2FRzB3gFmYg7Q'
-consumer_secret='4CJqP9JcFVcMZxnk3coscT5TUht0iHUrVH4I1Qpjk'
-access_token_key='79429095-feDqXDJg0u2wDGRfI0Zm0JmOID4WJlvylk4SBFkLC'
-access_token_secret='wBvXbSHrhaDzxRFwVMP4EMUU6AO5LRsxg4b3aIhIY'
+consumer_key = 'dTHMFjpQDhg0ab83e7w'
+consumer_secret='OZel8tb0tyJYUa0s642IdyiJcZJq29C5pAuSTaqO7Y'
+access_token_key='275902931-05SoYwxmFhiBxaSVuAqNj9TANLG0sFtMMHhOGawF'
+access_token_secret='u7VVjbQ4XcK2MTe1p6JYTc0kimozvEaAJhIr3iok'
 twitter_user = 'freez_meinster'
 max_last_status = 3
 
