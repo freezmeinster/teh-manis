@@ -4,11 +4,15 @@ from kotakuang.models import Kategori, Pemasukan,Pengeluaran
 class KategoriForm(ModelForm):
     
     class Meta :
-	model = Kategori
+		model = Kategori
 	
 
 class PengeluaranForm(ModelForm):
     
     class Meta :
-	model = Pengeluaran
+		model = Pengeluaran
+
+class PemasukanForm(ModelForm):
 	
+	class Meta :
+		model = Pemasukan

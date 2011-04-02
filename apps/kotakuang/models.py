@@ -35,8 +35,7 @@ class Pemasukan(models.Model):
     nama = models.CharField(max_length=255)
     kategori = models.ForeignKey('Kategori')
     tgl_buat = models.DateTimeField(auto_now_add=True)
-    jumlah = models.CharField(max_length=255)
-    harga = models.CharField(max_length=255)
+    jumlah = models.PositiveIntegerField()
     keterangan = models.TextField(blank=True,null=True)
     
     class Meta:

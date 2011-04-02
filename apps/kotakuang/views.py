@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response 
 from django.template import RequestContext
-from kotakuang.forms import KategoriForm,PengeluaranForm
+from kotakuang.forms import KategoriForm,PengeluaranForm,PemasukanForm
 from kotakuang.models import Kategori,Pengeluaran,Pemasukan
 
 def home(request):
@@ -25,8 +25,18 @@ def kategori(request):
 	},context_instance=RequestContext(request))
 
 def pemasukan(request):
-    return render_to_response('kotakuang/index.html',{
-	'url' : 'pemasukan',
+	pemasukan = Pemasukan.objects.filter(user=request.user)
+	if request.method == 'POST' :
+		data = request.POST.copy()
+		data['user'] = request.user.id
+		form  = PemasukanForm(data)
+		if form.is_valid():
+			form.save()
+			
+	return render_to_response('kotakuang/pemasukan.html',{
+		'url' : 'pemasukan',
+		'pemasukan' : pemasukan,
+		'form' : PemasukanForm(),
 	},context_instance=RequestContext(request))
 	
 def pengeluaran(request):
