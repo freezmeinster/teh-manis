@@ -8,7 +8,7 @@
 <table>
 	<tr><td>Tgl Masuk </td><td>{{ data.tgl_buat|date:"D, d M Y" }}</td></tr>
     <tr><td>Kategori</td><td><a href="{{ data.kategori.id }}">{{ data.kategori|title }}</a></td></tr>
-    <tr><td>Jumlah</td><td>{{ data.jumlah|intcomma }}</td></tr>
+    <tr><td>Jumlah</td><td>Rp {{ data.jumlah|intcomma }},-</td></tr>
     {% if data.keterangan %}
     <tr><td>Keterangan</td><td>{{ data.keterangan  }}</td></tr>
     {% endif %}

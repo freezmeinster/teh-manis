@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response 
+from django.template.defaultfilters import slugify
 from django.template import RequestContext
 from kotakuang.forms import KategoriForm,PengeluaranForm,PemasukanForm
 from kotakuang.models import Kategori,Pengeluaran,Pemasukan
@@ -14,6 +15,7 @@ def kategori(request):
     if request.method == 'POST' :
 	data = request.POST.copy()
 	data['user'] = request.user.id
+	data['slug'] = slugify(data['nama'])
 	form = KategoriForm(data)
 	if form.is_valid():
 	    form.save()
