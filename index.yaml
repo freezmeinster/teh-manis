@@ -34,6 +34,12 @@ indexes:
 - kind: kotakuang_pemasukan
   properties:
   - name: user_id
+  - name: tgl_buat
+    direction: desc
+
+- kind: kotakuang_pemasukan
+  properties:
+  - name: user_id
   - name: tgl_masuk
     direction: desc
 

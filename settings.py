@@ -10,6 +10,8 @@ PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'libs'))
 
+TIME_ZONE = 'Asia/Jakarta'
+
 LANGUAGE_CODE = 'id'
 
 SITE_ID = 1
