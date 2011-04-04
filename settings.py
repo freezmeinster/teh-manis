@@ -51,7 +51,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'libs.context_processors.kotakuang.user',
-    'libs.context_processors.get_last_tweet.twitter_status'
+    'libs.context_processors.kotakuang.acounting',
+   # 'libs.context_processors.get_last_tweet.twitter_status'
 )
 
 # This test runner captures stdout and associates tracebacks with their
