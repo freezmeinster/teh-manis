@@ -2,11 +2,11 @@
 {% block title %} <h2>Daftar Pemasukan</h2> {% endblock %}
 {% load humanize %}
 {% block content %}
-{% for data in pemasukan %}
+{% for data in pemasukan.object_list %}
 <p>
 <h3>{{ data.nama|title }}</h3>
 <table>
-	<tr><td>Tgl Masuk </td><td>{{ data.tgl_buat|date:"D, d M Y" }}</td></tr>
+    <tr><td>Tgl Masuk </td><td>{{ data.tgl_buat|date:"D, d M Y" }}</td></tr>
     <tr><td>Kategori</td><td><a href="{{ data.kategori.id }}">{{ data.kategori|title }}</a></td></tr>
     <tr><td>Jumlah</td><td>Rp {{ data.jumlah|intcomma }},-</td></tr>
     {% if data.keterangan %}
@@ -16,6 +16,23 @@
 </p>
 {% endfor %}
 <p>
+
+<div class="pagination">
+            <span class="step-links">
+                {% if pemasukan.has_previous %}
+                    <a href="?page={{ pemasukan.previous_page_number }}">sebelumnya</a>
+                {% endif %}
+
+            <span class="current">
+                Halaman {{ pemasukan.number }} dari {{ pemasukan.paginator.num_pages }}.
+            </span>
+
+                {% if pemasukann.has_next %}
+                    <a href="?page={{ pemasukan.next_page_number }}">setelahnya</a>
+                {% endif %}
+            </span>
+        </div>
+
 {{ form.errors }}
 <form method="POST" action="">
 <table>

@@ -2,11 +2,11 @@
 {% block title %} <h2>Daftar Pengeluaran</h2> {% endblock %}
 {% load humanize %}
 {% block content %}
-{% for data in pengeluaran %}
+{% for data in pengeluaran.object_list %}
 <p>
 <h3>{{ data.nama|title }}</h3>
 <table>
-	<tr><td>Tgl Keluar </td><td>{{ data.tgl_buat|date:"D, d M Y" }}</td></tr>
+    <tr><td>Tgl Keluar </td><td>{{ data.tgl_buat|date:"D, d M Y" }}</td></tr>
     <tr><td>Kategori</td><td><a href="{{ data.kategori.id }}">{{ data.kategori|title }}</a></td></tr>
     <tr><td>Jumlah</td><td>{{ data.jumlah }}</td></tr>
     <tr><td>Harga </td><td>Rp {{ data.harga|intcomma  }},-</td></tr>
@@ -16,6 +16,23 @@
 </table>
 </p>
 {% endfor %}
+
+<div class="pagination">
+            <span class="step-links">
+                {% if pengeluaran.has_previous %}
+                    <a href="?page={{ pengeluaran.previous_page_number }}">sebelumnya</a>
+                {% endif %}
+
+            <span class="current">
+                Halaman {{ pengeluaran.number }} dari {{ pengeluaran.paginator.num_pages }}.
+            </span>
+
+                {% if pengeluaran.has_next %}
+                    <a href="?page={{ pengeluaran.next_page_number }}">setelahnya</a>
+                {% endif %}
+            </span>
+        </div>
+
 <p>
 {{ form.errors }}
 <form method="POST" action="">
