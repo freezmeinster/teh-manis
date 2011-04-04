@@ -27,7 +27,7 @@ def kategori(request):
     },context_instance=RequestContext(request))
 
 def pemasukan(request):
-    pemasukan = Pemasukan.objects.filter(user=request.user)
+    pemasukan = Pemasukan.objects.filter(user=request.user).order_by('tgl_buat').reverse()
     paginator = Paginator(pemasukan, 6)
     page = int(request.GET.get('page', '1'))
     # If page request (9999) is out of range, deliver last page of results.
@@ -50,7 +50,7 @@ def pemasukan(request):
     },context_instance=RequestContext(request))
     
 def pengeluaran(request):
-    pengeluaran = Pengeluaran.objects.filter(user=request.user)
+    pengeluaran = Pengeluaran.objects.filter(user=request.user).order_by('tgl_buat').reverse()
     
     paginator = Paginator(pengeluaran, 6)
     page = int(request.GET.get('page', '1'))

@@ -31,9 +31,33 @@ indexes:
   - name: __key__
     direction: desc
 
+- kind: kotakuang_pemasukan
+  properties:
+  - name: user_id
+  - name: tgl_masuk
+    direction: desc
+
 - kind: kotakuang_pengeluaran
   properties:
   - name: __key__
+    direction: desc
+
+- kind: kotakuang_pengeluaran
+  properties:
+  - name: user_id
+  - name: __key__
+    direction: desc
+
+- kind: kotakuang_pengeluaran
+  properties:
+  - name: user_id
+  - name: tgl_buat
+    direction: desc
+
+- kind: kotakuang_pengeluaran
+  properties:
+  - name: user_id
+  - name: tgl_keluar
     direction: desc
 
 - kind: main_kategori
