@@ -3,7 +3,11 @@ from django.template import RequestContext
 from main.forms import UserRegistrationForm
 
 def home(request):
-    return render_to_response('main/index.html',{
+	if request.user.is_authenticated :
+		pass
+		#print "ok"
+
+	return render_to_response('main/index.html',{
     'url' : 'home',
     },context_instance=RequestContext(request))
     
