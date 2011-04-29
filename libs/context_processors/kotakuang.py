@@ -7,13 +7,17 @@ def user( request ):
 		total = long()
 		masuk = long()
 		saldo = long()
-		pengeluaran = Pengeluaran.objects.filter(user=request.user)
-		pemasukan = Pemasukan.objects.filter(user=request.user)
-		for data in pengeluaran :
-			total = data.total + total
+		try :
+		    pengeluaran = Pengeluaran.objects.filter(user=request.user)
+		    pemasukan = Pemasukan.objects.filter(user=request.user)
+		      
+		    for data in pengeluaran :
+			    total = data.total + total
 		
-		for data in pemasukan :
-			masuk = data.jumlah + masuk
+		    for data in pemasukan :
+			    masuk = data.jumlah + masuk
+		except :
+		    pass
 	
 	return { 
 		'total_pengeluaran' : total,
@@ -27,20 +31,24 @@ def acounting( request ):
 	if request.user.is_authenticated() :
 		total = long()
 		masuk = long()
-		keluar = Pengeluaran.objects.filter(user=request.user)
-		pemasukan = Pemasukan.objects.filter(user=request.user)
-		awal = keluar[0]
-		akhir = keluar.latest('tgl_buat')
-		rentang = akhir.tgl_buat.toordinal() - awal.tgl_buat.toordinal()
+		try :
+		    keluar = Pengeluaran.objects.filter(user=request.user)
+		    pemasukan = Pemasukan.objects.filter(user=request.user)
+		    awal = keluar[0]
+		    akhir = keluar.latest('tgl_buat')
+		    rentang = akhir.tgl_buat.toordinal() - awal.tgl_buat.toordinal()
 		
-		for data in pemasukan :
-			masuk = data.jumlah + masuk
+		    for data in pemasukan :
+			    masuk = data.jumlah + masuk
 		
-		for data in keluar:
-			total = data.total + total
-			saldo = masuk - total
-			rata = int(total) / int(rentang+1)
-			hidup = saldo / rata
+		    for data in keluar:
+			    total = data.total + total
+			    saldo = masuk - total
+			    rata = int(total) / int(rentang+1)
+			    hidup = saldo / rata
+		except :
+		    pass
+		
 	return {
 	'perhari' : rata,
 	'hidup' : hidup
